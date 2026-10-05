@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Qonit Sabrina Az-hari</title>
+    
+    <!-- Google Fonts untuk tipografi yang lebih baik -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Link CSS untuk Animasi Bergerak (AOS) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<style>
+/* Pengaturan Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navigasi */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #007bff;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffd700;
+}
+
+/* Bagian Umum */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #007bff;
+}
+
+.bg-light {
+    background-color: #ffffff;
+}
+
+/* Header/Hero */
+.hero {
+    background-color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #007bff;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    font-weight: 300;
+}
+
+/* Tentang Saya (Kiri & Kanan) */
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+.about-column {
+    flex: 1;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.about-column p {
+    margin-bottom: 15px;
+}
+
+/* Portofolio */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.portfolio-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Kontak */
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0,123,255,0.3);
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* Footer */
+footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+/* Responsivitas (Untuk layar kecil/Mobile) */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .nav-links {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links li {
+        margin: 5px 10px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .about-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+</style>
+</head>
+<body>
+
+    <!-- Navigasi -->
+    <nav>
+        <div class="logo">Qonit Web</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Bagian Header/Hero -->
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <img src="img/foto acha.png" alt="Qonit Sabrina Az-hari" class="profile-img">
+            <h1>Qonit Sabrina Az-hari</h1>
+            <p class="subtitle">Desainer Web | Pengembang | Kreator Konten</p>
+        </div>
+    </header>
+
+    <!-- Bagian Tentang Saya -->
+    <section id="about" class="section about-section">
+        <h2 data-aos="fade-up">About Me</h2>
+        
+        <div class="about-container">
+            <div class="about-column" data-aos="fade-right">
+                <p>Halo! Saya Qonit Sabrina Az-hari, seorang kreator visual yang memiliki ketertarikan mendalam pada keindahan alam dan seni. Melalui lensa kamera dan sentuhan kreativitas, saya berusaha mengabadikan momen-momen sederhana menjadi karya yang bermakna.</p>
+            </div>
+            
+            <div class="about-column" data-aos="fade-left">
+                <p>Portofolio saya berfokus pada fotografi pemandangan, dokumentasi perjalanan, serta eksplorasi seni visual organik. Saya percaya bahwa setiap sudut pandang memiliki cerita uniknya sendiri yang patut untuk dibagikan dan dinikmati.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Portofolio -->
+    <section id="portfolio" class="section portfolio-section bg-light">
+        <h2 data-aos="fade-up">Portfolio</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="100"><img src="img/image.png" alt="Proyek 1"></div>
+            <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="200"><img src="img/alam.png" alt="Proyek 2"></div>
+            <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="300"><img src="img/kreasi.png" alt="Proyek 3"></div>
+            <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="400"><img src="img/telaga.png" alt="Proyek 4"></div>
+        </div>
+    </section>
+
+    <!-- Bagian Kontak -->
+    <section id="contact" class="section contact-section">
+        <h2 data-aos="fade-up">Contact</h2>
+        <div class="contact-container" data-aos="fade-up" data-aos-delay="100">
+            <form action="#" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" name="address" rows="4"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="reset" class="btn btn-danger">Reset</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Created with &hearts; By Qonit Sabrina Az-hari &copy; 2024 All Rights Reserved.</p>
+    </footer>
+
+    <!-- SCRIPT HARUS DI SINI: Tepat di atas tag penutup body -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 50
+        });
+    </script>
+</body>
+</html>
